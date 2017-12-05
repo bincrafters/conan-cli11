@@ -1,6 +1,7 @@
-// #include <cpprest/json.h>
+#include "CLI/CLI.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
-    // const auto parsed_value = web::json::value::parse(U("-22"));
+    CLI::App app("K3Pi goofit fitter");
+    CLI11_PARSE(app, argc, argv);
 }
