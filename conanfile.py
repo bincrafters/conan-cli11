@@ -11,7 +11,7 @@ class LibnameConan(ConanFile):
     url = "https://github.com/bincrafters/conan-cli11"
     description = "Command line parser for C++11"
     license = "https://raw.githubusercontent.com/CLIUtils/CLI11/master/LICENSE"
-    exports_sources = ["CMakeLists.txt", "LICENSE"]
+    exports = ["LICENSE"]
 
     def source(self):
         source_url = "https://github.com/CLIUtils/CLI11"
@@ -20,7 +20,7 @@ class LibnameConan(ConanFile):
         os.rename(extracted_dir, "sources")
 
     def package(self):
-        self.copy(pattern="LICENSE")
+        self.copy(pattern="LICENSE", dst="licenses", src="sources")
         self.copy(pattern="*", dst="include", src="sources/include")
 
     def package_id(self):
