@@ -8,10 +8,10 @@ import os
 class LibnameConan(ConanFile):
     name = "cli11"
     version = "1.3.0"
-    url = "https://github.com/bincrafters/conan-cli11"
     description = "Command line parser for C++11"
-    license = "https://raw.githubusercontent.com/CLIUtils/CLI11/master/LICENSE"
-    exports = ["LICENSE"]
+    url = "https://github.com/bincrafters/conan-cli11"
+    license = "BSD 3-Clause"
+    exports = ["LICENSE.md"]
 
     def source(self):
         source_url = "https://github.com/CLIUtils/CLI11"
@@ -20,7 +20,7 @@ class LibnameConan(ConanFile):
         os.rename(extracted_dir, "sources")
 
     def package(self):
-        self.copy(pattern="LICENSE", dst="licenses", src="sources")
+        self.copy(pattern="LICENSE", src="sources")
         self.copy(pattern="*", dst="include", src="sources/include")
 
     def package_id(self):
