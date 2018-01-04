@@ -12,7 +12,6 @@ class LibnameConan(ConanFile):
     url = "https://github.com/bincrafters/conan-cli11"
     license = "BSD 3-Clause"
     exports = ["LICENSE.md"]
-    settings = "compiler"
 
     def source(self):
         source_url = "https://github.com/CLIUtils/CLI11"
@@ -28,13 +27,6 @@ class LibnameConan(ConanFile):
         self.info.header_only()
 
     def package_info(self):
-        v = Version(str(self.settings.compiler.version))
-        if self.settings.compiler == "gcc":
-            if v >= "5":
-                self.cpp_info.defines = [ '_GLIBCXX_USE_CXX11_ABI=1' ]
-            else:
-                self.cpp_info.defines = [ '_GLIBCXX_USE_CXX11_ABI=0' ]
-
-        if str(self.settings.compiler) in [ "gcc", "apple-clang", "clang" ]:
-            self.cpp_info.cppflags = [ "-std=c++11" ]
-
+        self.output.warn("===============================================================================================")
+        self.output.warn("[CLI11] Consumers of the %s header-only library must ensure supporting the c++11 standard." % self.name)
+        self.output.warn("===============================================================================================")
