@@ -23,7 +23,7 @@ class Cli11Conan(ConanFile):
     
     def package(self):
         include_dir = os.path.join(self.source_subfolder, "include")
-        self.copy(pattern="LICENSE", dst="licenses", src="sources")
+        self.copy(pattern="LICENSE", dst="licenses", src=self.source_subfolder)
         self.copy(pattern="*", dst="include", src=include_dir)
 
     def package_id(self):
