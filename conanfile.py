@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 from conans import ConanFile, tools
 import os
 
@@ -11,9 +10,12 @@ class Cli11Conan(ConanFile):
     version = "1.5.3"
     description = "Command line parser for C++11"
     url = "https://github.com/bincrafters/conan-cli11"
+    homepage = "https://github.com/CLIUtils/CLI11"
+    author = "Bincrafters <bincrafters@gmail.com>"
     license = "BSD 3-Clause"
     exports = ["LICENSE.md"]
     source_subfolder = "source_subfolder"
+    no_copy_source = True
 
     def source(self):
         source_url = "https://github.com/CLIUtils/CLI11"
