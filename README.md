@@ -1,3 +1,12 @@
+## Packge Deprecation Notice
+
+The author of this library has taken ownership of the public Conan package for this library, which can be found at the following links:  
+
+https://github.com/CLIUtils/CLI11
+https://bintray.com/cliutils/CLI11/CLI11%3Acliutils
+
+Bincrafters will keep this version of the package on Github and Bintray for some unspecified amount of time (typically several weeks), however it will no longer be maintained or supported and will be removed without any further warning or notice. Users are advised to update their projects to use the official Conan package maintained by the library author immediately. 
+
 ## Package Status
 
 | Bintray | Appveyor | Travis |
