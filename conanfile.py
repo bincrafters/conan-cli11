@@ -7,7 +7,7 @@ import os
 
 class Cli11Conan(ConanFile):
     name = "cli11"
-    version = "1.6.0"
+    version = "1.6.1"
     description = "Command line parser for C++11"
     url = "https://github.com/bincrafters/conan-cli11"
     homepage = "https://github.com/CLIUtils/CLI11"
